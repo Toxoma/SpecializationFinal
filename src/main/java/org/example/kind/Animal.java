@@ -1,6 +1,7 @@
 package org.example.kind;
 
 import org.example.command.Command;
+import org.example.command.Jump;
 import org.example.command.Run;
 import org.example.command.Sit;
 
@@ -54,8 +55,9 @@ public class Animal {
 
     public void addCommand(String name){
         Command newCommand = switch (name) {
-            case "run" -> new Run();
-            case "sit" -> new Sit();
+            case "бежать" -> new Run();
+            case "сидеть" -> new Sit();
+            case "прыгать" -> new Jump();
             default -> null;
         };
         if (newCommand == null){
@@ -72,7 +74,6 @@ public class Animal {
     }
 
     public Integer getId() {
-        System.out.println(this.id);
         return this.id;
     }
 
